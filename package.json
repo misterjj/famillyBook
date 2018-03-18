@@ -1,0 +1,41 @@
+{
+  "name": "famillybook",
+  "version": "1.0.0",
+  "description": "Symfony Standard Edition ========================",
+  "main": "build/app.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "dev": "./node_modules/.bin/encore dev --watch",
+    "prod": "./node_modules/.bin/encore production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/misterjj/famillyBook.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/misterjj/famillyBook/issues"
+  },
+  "browserslist": [
+    "last 2 versions",
+    "IE >= 8"
+  ],
+  "homepage": "https://github.com/misterjj/famillyBook#readme",
+  "devDependencies": {
+    "@symfony/webpack-encore": "^0.13.0",
+    "autoprefixer": "^7.1.2",
+    "babel-preset-es2017": "^6.24.1",
+    "bootstrap-sass": "^4.0.*",
+    "encore-require-assets-helper": "^0.3.0",
+    "jquery": "^3.2.1",
+    "node-sass": "^4.5.3",
+    "postcss-loader": "^2.0.6",
+    "sass-loader": "^6.0.6"
+  },
+  "dependencies": {
+    "popper.js": "^1.14.1"
+  }
+}

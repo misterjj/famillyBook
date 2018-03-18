@@ -1,0 +1,12 @@
+{
+  presets: [
+    ['env', {
+      modules: false,
+      targets: [
+        "last 2 versions",
+        "IE >= 8"
+      ],
+      useBuiltIns: true
+    }]
+  ]
+}
