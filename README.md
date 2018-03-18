@@ -1,72 +1,55 @@
-Symfony Standard Edition
+Nom de code FamillyBook
 ========================
 
-Welcome to the Symfony Standard Edition - a fully-functional Symfony
-application that you can use as the skeleton for your new applications.
+FamillyBook est un site à usage personnel afin de partager des photos entre membre d'une faimmile
 
-For details on how to download and get started with Symfony, see the
-[Installation][1] chapter of the Symfony Documentation.
-
-What's inside?
+Installer le projet
 --------------
 
-The Symfony Standard Edition is configured with the following defaults:
+Installer les dépendances php
 
-  * An AppBundle you can use to start coding;
+```bash
+composer install
+```
 
-  * Twig as the only configured template engine;
+Installer les dépendances front
 
-  * Doctrine ORM/DBAL;
+```bash
+npm install
+```
 
-  * Swiftmailer;
+Build les statics
 
-  * Annotations enabled for everything.
+```bash
+./node_modules/.bin/encore prod
+```
 
-It comes pre-configured with the following bundles:
+Ajouter Un premier utilisateur
 
-  * **FrameworkBundle** - The core Symfony framework bundle
+```bash
+bin/console fos:user:create 
+```
 
-  * [**SensioFrameworkExtraBundle**][6] - Adds several enhancements, including
-    template and routing annotation capability
+Passer un utilisateur admin
 
-  * [**DoctrineBundle**][7] - Adds support for the Doctrine ORM
+```bash
+bin/console fos:user:promote [USER] ROLE_ADMIN 
+```
 
-  * [**TwigBundle**][8] - Adds support for the Twig templating engine
+Dépendances utilisées
+--------------
 
-  * [**SecurityBundle**][9] - Adds security by integrating Symfony's security
-    component
+* [Symfony 3](https://symfony.com/)
+* [Webpack encore](https://github.com/symfony/webpack-encore)
+* [FOSUserBundle](https://github.com/FriendsOfSymfony/FOSUserBundle)
+* [Bootstrap 4](https://getbootstrap.com/)
+* Liste complète dans composer.json et package.json
 
-  * [**SwiftmailerBundle**][10] - Adds support for Swiftmailer, a library for
-    sending emails
+Auteurs
+--------------
 
-  * [**MonologBundle**][11] - Adds support for Monolog, a logging library
+Germain *Angel* DESCLODURES et Jonathan *Misterjj* JORAND 
 
-  * **WebProfilerBundle** (in dev/test env) - Adds profiling functionality and
-    the web debug toolbar
-
-  * **SensioDistributionBundle** (in dev/test env) - Adds functionality for
-    configuring and working with Symfony distributions
-
-  * [**SensioGeneratorBundle**][13] (in dev env) - Adds code generation
-    capabilities
-
-  * [**WebServerBundle**][14] (in dev env) - Adds commands for running applications
-    using the PHP built-in web server
-
-  * **DebugBundle** (in dev/test env) - Adds Debug and VarDumper component
-    integration
-
-All libraries and bundles included in the Symfony Standard Edition are
-released under the MIT or BSD license.
-
-Enjoy!
-
-[1]:  https://symfony.com/doc/3.3/setup.html
-[6]:  https://symfony.com/doc/current/bundles/SensioFrameworkExtraBundle/index.html
-[7]:  https://symfony.com/doc/3.3/doctrine.html
-[8]:  https://symfony.com/doc/3.3/templating.html
-[9]:  https://symfony.com/doc/3.3/security.html
-[10]: https://symfony.com/doc/3.3/email.html
-[11]: https://symfony.com/doc/3.3/logging.html
-[13]: https://symfony.com/doc/current/bundles/SensioGeneratorBundle/index.html
-[14]: https://symfony.com/doc/current/setup/built_in_web_server.html
+Copyrigth
+--------------
+L’ensemble de ce projet (contenu et présentation) constitue une œuvre protégée par la législation française et internationale en vigueur sur le droit d’auteur et d’une manière générale sur la propriété intellectuelle

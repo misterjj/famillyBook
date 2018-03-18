@@ -1,0 +1,6 @@
+{% extends "admin/base.html.twig" %}
+
+{% block fos_user_content %}
+    <div class="h1">Ajouter un utilisateur</div>
+    {% include "@FOSUser/Registration/register_content.html.twig" %}
+{% endblock fos_user_content %}

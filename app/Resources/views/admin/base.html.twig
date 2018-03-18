@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row">
+        <div class="col">
+            {% block content %}
+            {% endblock %}
+            {% block fos_user_content %}
+            {% endblock fos_user_content %}
+        </div>
+        <div class="col-md-auto">
+            <div class="h2">Actions</div>
+            <a href="{{ path('register') }}" class="btn btn-outline-primary btn-lg btn-block">Ajouter un utilisateurs</a>
+        </div>
+    </div>
+{% endblock %}
+
