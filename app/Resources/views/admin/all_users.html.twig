@@ -1,0 +1,18 @@
+{% extends 'admin/base.html.twig' %}
+
+{% block content %}
+    {% set countPerPage = 10 %}
+    <div class="h1">Les derniers inscrits</div>
+    {{ render(controller(
+    'AppBundle\\Controller\\AdminController::usersListingAction',
+    { 'limit': countPerPage, 'page' : page }
+    )) }}
+
+    <div class="text-center">
+        {{ render(controller(
+        'AppBundle\\Controller\\ToolsController::paginationAction',
+        { 'count': count, 'countPerPage': countPerPage, 'currentPage': page, 'routeName': app.request.get('_route') }
+        )) }}
+    </div>
+{% endblock %}
+

@@ -39,7 +39,7 @@ vendor/
 /phpunit.xml
 
 # Build data
-/build/
+/web/build/
 
 # Backup entities generated with doctrine:generate:entities command
 **/Entity/*~

@@ -11,7 +11,7 @@
     </head>
     <body>
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="#">FamillyBook</a>
+            <a class="navbar-brand" href="{{ path('homepage') }}">FamillyBook</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation" style="">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -59,7 +59,8 @@
         <div class="container-fluid mt-5">
             {% block body %}{% endblock %}
         </div>
-        {% block javascripts %}{% endblock %}
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA3Rgk38SAUDb6cuh3AaYwMUx2rkrqoBF8&libraries=places" async defer ></script>
         <script src="{{ asset('build/app.js') }}"></script>
+        {% block javascripts %}{% endblock %}
     </body>
 </html>

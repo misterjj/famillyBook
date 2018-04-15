@@ -1,6 +1,26 @@
 {% extends 'admin/base.html.twig' %}
 
 {% block content %}
-   <div class="h1">Dashboard</div>
+    <div class="h1">Dashboard</div>
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="card">
+                <h3 class="card-header">Les derniers inscrits</h3>
+                <div class="card-body px-0 pb-0">
+                    {{ render(controller(
+                    'AppBundle\\Controller\\AdminController::UsersListingAction',
+                    { 'limit': 5, 'page' : 1 }
+                    )) }}
+                </div>
+                <div class="card-footer">
+                    <div class="text-right">
+                        <a href="{{ path('allUsers') }}">En voir +</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %}
 

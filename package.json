@@ -36,6 +36,8 @@
     "sass-loader": "^6.0.6"
   },
   "dependencies": {
-    "popper.js": "^1.14.1"
+    "google-places-autocomplete-service": "0.0.3",
+    "popper.js": "^1.14.1",
+    "react-places-autocomplete": "^6.1.3"
   }
 }

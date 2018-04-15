@@ -1,0 +1,115 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div class="row justify-content-md-center">
+        <div class="col-lg-6">
+            <h1>Créer un profil</h1>
+            <div class="row">
+                <div class="col-sm-4">
+                    Photo
+                </div>
+                <div class="col-sm-8">
+                    <form action="{{ path('profileSave') }}" method="post" class="form-entre-disabled">
+                        <div class="form-group">
+                            <label for="username">Nom * </label>
+                            <input type="text" id="name" name="name" value="" class="form-control" placeholder="Nom" required autofocus>
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Surnom</label>
+                            <input type="text" id="nickname" name="nickname" value="" class="form-control" placeholder="Surnom">
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Date de naissance</label>
+                            <div class="input-group">
+                                <input type="text" id="birthday" name="birthday" value="" class="form-control datepicker" placeholder="Date de naissance" required>
+                                <div class="input-group-append">
+                                    <button class="btn btn-outline-info" type="button"><i class="far fa-calendar-alt"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="username">Ville de naissance</label>
+                            <input type="text" id="birthdayCity" name="birthdayCity" value="" class="form-control google-autocomplete" placeholder="Ville de naissance" autocomplete="new-password">
+                            <input class="lat" type="hidden" id="birthdayLat" name="birthdayLat">
+                            <input class="lng" type="hidden" id="birthdayLong" name="birthdayLong">
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="collapse multi-collapse-death" id="collapseDeathLabel" aria-expanded="false">
+                                        <label for="username">Date du décès</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="checkbox text-right">
+                                        <label data-toggle="collapse" data-target=".multi-collapse-death" aria-controls="collapseDeath collapseDeathLabel">
+                                            <input value="isDead" type="checkbox"/> Est décèdé ?
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="collapse multi-collapse-death" id="collapseDeath" aria-expanded="false">
+                                <div class="input-group">
+                                    <input type="text" id="deathday" name="deathday" value="" class="form-control datepicker" placeholder="Date du décès" required>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-info" type="button"><i class="far fa-calendar-alt"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group collapse multi-collapse-death">
+                            <label for="username">Ville de décès</label>
+                            <input type="text" id="deathdayCity" name="deathdayCity" value="" class="form-control google-autocomplete" placeholder="Ville de décès" autocomplete="new-password">
+                            <input class="lat" type="hidden" id="deathdayLat" name="deathdayLat">
+                            <input class="lng" type="hidden" id="deathdayLong" name="deathdayLong">
+                        </div>
+                        <div class="form-group">
+                            <div class="row">
+                                <div class="col">
+                                    <div class="collapse multi-collapse-baptized" id="collapseBaptismLabel" aria-expanded="false">
+                                        <label for="username">Date du baptème</label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="checkbox text-right">
+                                        <label data-toggle="collapse" data-target=".multi-collapse-baptized" aria-controls="collapseBaptism collapseBaptismLabel">
+                                            <input value="isBaptized" type="checkbox"/> Est baptisé ?
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="collapse multi-collapse-baptized" id="collapseBaptism" aria-expanded="false">
+                                <div class="input-group">
+                                    <input type="text" id="baptismday" name="baptismday" value="" class="form-control datepicker" placeholder="Date du baptème" required>
+                                    <div class="input-group-append">
+                                        <button class="btn btn-outline-info" type="button"><i class="far fa-calendar-alt"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group collapse multi-collapse-baptized">
+                            <label for="username">Ville de baptême</label>
+                            <input type="text" id="baptismdayCity" name="baptismdayCity" value="" class="form-control google-autocomplete" placeholder="Ville de baptême" autocomplete="new-password">
+                            <input class="lat" type="hidden" id="baptismdayLat" name="baptismdayLat">
+                            <input class="lng" type="hidden" id="baptismdayLong" name="baptismdayLong">
+                        </div>
+                        <div class="form-group">
+                            <input class="btn btn-primary btn-lg btn-block" type="submit" value="Valider">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts  %}
+    {#<script>#}
+      {#function initInputs() {#}
+        {#alert('load');#}
+        {#setTimeout(function() {#}
+          {#initInputGeoCodding(document.getElementById('birthdayCity'), document.getElementById('birthdayLat'), document.getElementById('birthdayLong'));#}
+        {#}, 1000);#}
+      {#}#}
+    {#</script>#}
+{% endblock %}

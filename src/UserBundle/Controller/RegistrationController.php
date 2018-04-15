@@ -2,7 +2,6 @@
 
 namespace UserBundle\Controller;
 
-use FOS\UserBundle\Event\FilterUserResponseEvent;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use FOS\UserBundle\Controller\RegistrationController as BaseController;
 use FOS\UserBundle\Event\FormEvent;
