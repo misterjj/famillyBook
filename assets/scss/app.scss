@@ -1,9 +1,33 @@
 @import 'variables';
 @import '~bootstrap/scss/bootstrap';
 @import '~bootstrap-datepicker/dist/css/bootstrap-datepicker.css';
+@import '~croppie/croppie.css';
 
 nav {
   form {
     flex-grow: 1;
+  }
+}
+
+.cropper {
+  .upload-file-msg {
+    border: 2px solid #CCC;
+    cursor: pointer;
+    display: table;
+    width: 100%;
+    height: 100%;
+
+    &::after {
+      content: "Cliquer pour charger une photo (.jpg)";
+      padding: 20px;
+      display: table-cell;
+      vertical-align: middle;
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+  .upload-file-input {
+    display: none;
   }
 }

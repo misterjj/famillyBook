@@ -1,15 +1,15 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-    <div class="row justify-content-md-center">
+    <div class="row justify-content-md-center" onload="initInputs()">
         <div class="col-lg-6">
             <h1>Créer un profil</h1>
             <div class="row">
                 <div class="col-sm-4">
-                    Photo
+                    <div id="cropper"></div>
                 </div>
                 <div class="col-sm-8">
-                    <form action="{{ path('profileSave') }}" method="post" class="form-entre-disabled">
+                    <form action="{{ path('profileSave') }}" method="post" class="form-entre-disabled form-cropper">
                         <div class="form-group">
                             <label for="username">Nom * </label>
                             <input type="text" id="name" name="name" value="" class="form-control" placeholder="Nom" required autofocus>
@@ -29,7 +29,7 @@
                         </div>
                         <div class="form-group">
                             <label for="username">Ville de naissance</label>
-                            <input type="text" id="birthdayCity" name="birthdayCity" value="" class="form-control google-autocomplete" placeholder="Ville de naissance" autocomplete="new-password">
+                            <input type="text" id="birthdayCity" name="birthdayCity" value="" class="form-control google-autocomplete" placeholder="Ville de naissance">
                             <input class="lat" type="hidden" id="birthdayLat" name="birthdayLat">
                             <input class="lng" type="hidden" id="birthdayLong" name="birthdayLong">
                         </div>
@@ -59,7 +59,7 @@
                         </div>
                         <div class="form-group collapse multi-collapse-death">
                             <label for="username">Ville de décès</label>
-                            <input type="text" id="deathdayCity" name="deathdayCity" value="" class="form-control google-autocomplete" placeholder="Ville de décès" autocomplete="new-password">
+                            <input type="text" id="deathdayCity" name="deathdayCity" value="" class="form-control google-autocomplete" placeholder="Ville de décès">
                             <input class="lat" type="hidden" id="deathdayLat" name="deathdayLat">
                             <input class="lng" type="hidden" id="deathdayLong" name="deathdayLong">
                         </div>
@@ -89,7 +89,7 @@
                         </div>
                         <div class="form-group collapse multi-collapse-baptized">
                             <label for="username">Ville de baptême</label>
-                            <input type="text" id="baptismdayCity" name="baptismdayCity" value="" class="form-control google-autocomplete" placeholder="Ville de baptême" autocomplete="new-password">
+                            <input type="text" id="baptismdayCity" name="baptismdayCity" value="" class="form-control google-autocomplete" placeholder="Ville de baptême">
                             <input class="lat" type="hidden" id="baptismdayLat" name="baptismdayLat">
                             <input class="lng" type="hidden" id="baptismdayLong" name="baptismdayLong">
                         </div>
@@ -104,12 +104,4 @@
 {% endblock %}
 
 {% block javascripts  %}
-    {#<script>#}
-      {#function initInputs() {#}
-        {#alert('load');#}
-        {#setTimeout(function() {#}
-          {#initInputGeoCodding(document.getElementById('birthdayCity'), document.getElementById('birthdayLat'), document.getElementById('birthdayLong'));#}
-        {#}, 1000);#}
-      {#}#}
-    {#</script>#}
 {% endblock %}

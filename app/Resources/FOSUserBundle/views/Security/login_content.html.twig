@@ -1,6 +1,9 @@
 {% trans_default_domain 'FOSUserBundle' %}
 
 <form action="{{ path("fos_user_security_check") }}" method="post" class="form-signin">
+    {% if csrf_token %}
+        <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+    {% endif %}
     <div class="text-center mb-4">
         <img class="mb-4" src="https://getbootstrap.com/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
         <h1 class="h3 mb-3 font-weight-normal">Floating labels</h1>

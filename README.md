@@ -18,6 +18,12 @@ Installer les dépendances front
 npm install
 ```
 
+Créer les tables
+
+```bash
+bin/console doctrine:schema:create 
+```
+
 Build les statics
 
 ```bash

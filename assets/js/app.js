@@ -5,6 +5,8 @@ require('jquery');
 require('bootstrap');
 require('bootstrap-datepicker');
 
+require('./cropp')
+
 $.fn.datepicker.dates['fr'] = {
   days: ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"],
   daysShort: ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"],
@@ -31,13 +33,18 @@ $(function () {
       input.parent().children('.lat').val(place.geometry.location.lat());
       input.parent().children('.lng').val(place.geometry.location.lng());
     });
-  })
+  });
   
   $('.form-entre-disabled').on('keyup keypress', function(e) {
-    var keyCode = e.keyCode || e.which;
+    let keyCode = e.keyCode || e.which;
     if (keyCode === 13) {
       e.preventDefault();
       return false;
     }
   });
-})
+
+  $('.form-cropper').formCropper({
+    selector: '#cropper',
+    name: 'picture'
+  });
+});
