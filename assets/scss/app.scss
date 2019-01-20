@@ -56,6 +56,12 @@ nav {
         padding: 3px;
         padding-left: $spacer;
 
+        div, i {
+          background: transparent;
+          border: none;
+          color: $black;
+        }
+
         &:nth-child(2n) {
          background-color: $gray-200;
         }
@@ -64,17 +70,15 @@ nav {
           color: $white;
           cursor: pointer;
 
-          div, i {
+          div, i, svg {
             background: transparent;
             border: none;
             color: $white;
           }
         }
-
-        div, i {
-          background: transparent;
-          border: none;
-          color: $black;
+        &.add-profile {
+          background-color: $green !important;
+          color: $white !important;
         }
       }
     }

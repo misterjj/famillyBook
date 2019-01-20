@@ -29,7 +29,7 @@
             <li class="nav-item {{ app.request.attributes.get('_route') == "profile" ? "active" : ""}}">
 
                 <a class="nav-link" href="#">
-                    <img src="{{ id ? path('imageResized', {'type': constant('Appbundle\\Controller\\ImageController::TYPE_USER'), 'id': id, 'width' : 24, 'height': 24}): 'https://dummyimage.com/24x24/999999/292929.jpg' }}" class="rounded"> {{ name }}
+                    <img src="{{ id ? path('imageResized', {'type': 'user', 'id': id, 'width' : 24, 'height': 24}): 'https://dummyimage.com/24x24/999999/292929.jpg' }}" class="rounded"> {{ name }}
                 </a>
             </li>
             <li class="nav-item dropdown">

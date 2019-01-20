@@ -27,7 +27,7 @@ class DefaultController extends Controller
         $redirect = "";
         $id = "";
         $name = "";
-        if (is_null($user->getProfile()) && $request->get("_route") != "profileSearch") {
+        if (is_null($user->getProfile()) && !in_array($request->get("_route"), ["profileSearch", "profileCreate"])) {
             $redirect = $this->generateUrl("profileSearch");
         } else if(!is_null($user->getProfile())) {
             $id = $user->getProfile()->getId();

@@ -14,6 +14,16 @@
             </form>
         </div>
     </div>
+    <div class="modal fade bd-example-modal-xl" tabindex="-1" role="dialog" aria-hidden="true" id="create-profile">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                {{ render(controller(
+                'AppBundle\\Controller\\ProfileController::createAction',
+                { 'request': app.request, 'autolink': 'true' }
+                )) }}
+            </div>
+        </div>
+    </div>
 {% endblock %}
 
 {% block javascripts  %}

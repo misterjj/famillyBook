@@ -17,10 +17,11 @@ class ProfileController extends Controller
     /**
      * @Route("/create", name="profileCreate")
      */
-    public function createAction(Request $request)
+    public function createAction(Request $request, bool $autolink = false)
     {
         return $this->render('profile/create.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
+            'autolink' => $autolink
         ]);
     }
 
@@ -93,11 +94,17 @@ class ProfileController extends Controller
             file_put_contents($file, $image_base64);
         }
 
+        if ($profile->getId() && $request->get('autolink')) {
+            $this->linkToUser($profile);
+            return $this->redirectToRoute('homepage');
+        }
+
         // replace this example code with whatever you need
         return $this->render('profile/create.html.twig', [
             'base_dir' => realpath($this->getParameter('kernel.project_dir')).DIRECTORY_SEPARATOR,
         ]);
     }
+
 
     /**
      * @Route("/link/{profileid}", name="profileLink", requirements={"profileid"="\d+"})
@@ -112,6 +119,12 @@ class ProfileController extends Controller
         /** @var Profile $profile */
         $profile = $profileRepository->find($profileId);
 
+        $this->linkToUser($profile);
+        return $this->redirectToRoute('homepage');
+    }
+
+    private function linkToUser(Profile $profile)
+    {
         /** @var User $user */
         $user = $this->getUser();
         if (is_null($user->getProfile())) {
@@ -121,7 +134,5 @@ class ProfileController extends Controller
             $em->persist($user);
             $em->flush();
         }
-
-        return $this->redirectToRoute('homepage');
     }
 }

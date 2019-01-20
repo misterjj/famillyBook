@@ -1,15 +1,16 @@
-{% extends 'base.html.twig' %}
+{#{% extends 'base.html.twig' %}#}
 
 {% block body %}
     <div class="row justify-content-md-center" onload="initInputs()">
-        <div class="col-lg-6">
-            <h1>Créer un profil</h1>
+        <div class="col-lg-10">
+            <h1 class="mt-4 mb-4">Créer un profil</h1>
             <div class="row">
                 <div class="col-sm-4">
                     <div id="cropper"></div>
                 </div>
                 <div class="col-sm-8">
                     <form action="{{ path('profileSave') }}" method="post" class="form-entre-disabled form-cropper">
+                        <input type="hidden" name="autolink" value="{{ autolink ? 1 : 0 }}">
                         <div class="form-group">
                             <label for="username">Nom * </label>
                             <input type="text" id="name" name="name" value="" class="form-control" placeholder="Nom" required autofocus>
