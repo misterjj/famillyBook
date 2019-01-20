@@ -2,10 +2,12 @@
  * Created by jonathan on 18/03/2018.
  */
 require('jquery');
+require('webpack-jquery-ui/autocomplete');
 require('bootstrap');
 require('bootstrap-datepicker');
 
 require('./cropp')
+require('./autocomplete')
 
 $.fn.datepicker.dates['fr'] = {
   days: ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"],

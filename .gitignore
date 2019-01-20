@@ -33,6 +33,7 @@
 .idea/
 node_modules/
 vendor/
+data/
 
 # PHPUnit
 /app/phpunit.xml

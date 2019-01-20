@@ -4,7 +4,7 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="AppBundle\Repository\ProfileRepository")
  * @ORM\Table(name="profile")
  */
 class Profile
@@ -99,6 +99,13 @@ class Profile
      * @ORM\Column(type="string", length=32, nullable=true)
      */
     private $baptismdayCity;
+
+    /**
+     * @var User
+     * @ORM\OneToOne(targetEntity="User")
+     * @ORM\JoinColumn(name="user_id", referencedColumnName="id", nullable=true)
+     */
+    protected $user;
 
     /**
      * @return mixed
@@ -357,6 +364,24 @@ class Profile
     public function setBaptismdayCity(?string $baptismdayCity): ?Profile
     {
         $this->baptismdayCity = $baptismdayCity;
+        return $this;
+    }
+
+    /**
+     * @return User
+     */
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    /**
+     * @param User $user
+     * @return Profile
+     */
+    public function setUser(?User $user): Profile
+    {
+        $this->user = $user;
         return $this;
     }
 

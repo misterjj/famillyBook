@@ -10,7 +10,8 @@ parameters:
     # You should uncomment this if you want to use pdo_sqlite
     #database_path: '%kernel.project_dir%/var/data/data.sqlite'
     path_to_data: '/data'
-    picture_folder_name: 'picture'
+    picture_folder_name: 'pictures'
+    user_picture_folder_name: 'users'
 
     mailer_transport: smtp
     mailer_host: 127.0.0.1

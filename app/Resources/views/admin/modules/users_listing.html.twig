@@ -14,7 +14,6 @@
             <td>{{ user.username }}</td>
             <td>{{ user.email }}</td>
             <td class="text-right">
-                {#<a href="" class="btn btn-sm btn-info"><i class="far fa-edit"></i></a>#}
                 {% if 'ROLE_ADMIN' not in user.roles %}
                     <a href="{{ path('deleteUser', {user: user.id}) }}" class="btn btn-sm btn-danger"
                        onclick="return confirm('Voulez-vous supprimer {{ user.username }} ?')"><i class="far fa-trash-alt"></i></a>

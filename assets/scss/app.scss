@@ -1,4 +1,7 @@
 @import 'variables';
+@import '~jquery-ui/themes/base/core.css';
+@import '~jquery-ui/themes/base/theme.css';
+@import '~jquery-ui/themes/base/autocomplete.css';
 @import '~bootstrap/scss/bootstrap';
 @import '~bootstrap-datepicker/dist/css/bootstrap-datepicker.css';
 @import '~croppie/croppie.css';
@@ -29,5 +32,51 @@ nav {
 
   .upload-file-input {
     display: none;
+  }
+}
+
+.form-control {
+  &.ui-autocomplete-input {
+    border-bottom: none;
+    border-bottom-right-radius: 0;
+  }
+}
+
+.ui-widget {
+  &.ui-widget-content {
+    &.ui-autocomplete {
+      border: none;
+      //transform: translateX(1px);
+      border-bottom-right-radius: $border-radius;
+      border-bottom-left-radius: $border-radius;
+      list-style: none;
+      padding: 0;
+
+      li {
+        padding: 3px;
+        padding-left: $spacer;
+
+        &:nth-child(2n) {
+         background-color: $gray-200;
+        }
+        &:hover {
+          background: $blue;
+          color: $white;
+          cursor: pointer;
+
+          div, i {
+            background: transparent;
+            border: none;
+            color: $white;
+          }
+        }
+
+        div, i {
+          background: transparent;
+          border: none;
+          color: $black;
+        }
+      }
+    }
   }
 }

@@ -67,13 +67,11 @@ $(function() {
       });
 
       this.submit(function(){
-        console.log('coucou');
         uploadCropp.croppie('result', {
           type: 'canvas',
           size: 'viewport'
         }).then(function (resp) {
           input.val(resp);
-          console.log(resp);
         });
       });
     } else {
